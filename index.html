@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mark Jebens — Software Engineer</title>
+    <meta name="description" content="Software engineer building scalable dashboards and data-driven tools." />
+    <meta property="og:title" content="Mark Jebens — Software Engineer" />
+    <meta property="og:description" content="Software engineer building scalable dashboards and data-driven tools." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const root = document.documentElement;
+            root.setAttribute("data-theme", saved ? saved : "auto");
+        })();
+    </script>
+</head>
+<body>
+<div class="page">
+    <header class="topbar">
+        <span class="brand">Mark Jebens</span>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme" aria-pressed="false">
+            <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 3v2M12 19v2M21 12h-2M5 12H3M18.364 5.636l-1.414 1.414M7.05 16.95l-1.414 1.414M18.364 18.364l-1.414-1.414M7.05 7.05L5.636 5.636" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3a7.002 7.002 0 0 0 9.79 9.79z"/>
+            </svg>
+        </button>
+    </header>
+
+    <main class="wrap">
+        <article class="card">
+            <img class="avatar" src="pfp.jpg" alt="Mark Jebens" />
+            <h1 class="title">Mark Jebens</h1>
+            <p class="subtle">Software Engineer | React & Node.js Specialist | Scalable Systems | Building High-Performance Dashboards & Data Platforms</p>
+            <div class="pill-row">
+                <a id="emailLink" class="pill"
+                   data-u="bWFya2plYmVucw=="
+                   data-d="Z21haWwuY29t">
+                Email
+                </a>
+                <a class="pill" href="https://github.com/markjebens" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="pill" href="https://www.linkedin.com/in/mark-jebens/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <small>© <span id="year"></span> Mark Jebens</small>
+    </footer>
+</div>
+
+<script>
+    (function () {
+        const email = "markjebens@gmail.com";
+        const link = document.getElementById("emailLink");
+
+        function showToast(message) {
+            const el = document.createElement("div");
+            el.className = "toast";
+            el.setAttribute("role", "status");
+            el.textContent = message;
+            document.body.appendChild(el);
+            requestAnimationFrame(() => el.classList.add("show"));
+            setTimeout(() => {
+                el.classList.remove("show");
+                setTimeout(() => el.remove(), 200);
+            }, 1800);
+        }
+
+        link.addEventListener("click", () => {
+            const tryClipboard = navigator.clipboard?.writeText
+                ? navigator.clipboard.writeText(email).then(() => true).catch(() => false)
+                : Promise.resolve(false);
+
+            tryClipboard.then((ok) => {
+                if (!ok) {
+                    const ta = document.createElement("textarea");
+                    ta.value = email;
+                    ta.style.position = "fixed";
+                    ta.style.opacity = "0";
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand("copy"); } catch {}
+                    ta.remove();
+                }
+                showToast("Email copied to clipboard");
+            });
+        });
+    })();
+
+    (function () {
+        const link = document.getElementById("emailLink");
+
+        function decode(b64) { try { return atob(b64); } catch { return ""; } }
+        function emailFrom(el) {
+            const u = decode(el.dataset.u || "");
+            const d = decode(el.dataset.d || "");
+            return u && d ? `${u}@${d}` : "";
+        }
+
+        function showToast(message) {
+            const el = document.createElement("div");
+            el.className = "toast";
+            el.setAttribute("role", "status");
+            el.textContent = message;
+            document.body.appendChild(el);
+            requestAnimationFrame(() => el.classList.add("show"));
+            setTimeout(() => { el.classList.remove("show"); setTimeout(() => el.remove(), 200); }, 1800);
+        }
+
+        link.addEventListener("click", (e) => {
+            const addr = emailFrom(link);
+            if (!addr) return;
+            link.setAttribute("href", `mailto:${addr}`);
+
+            const tryClipboard = navigator.clipboard?.writeText
+                ? navigator.clipboard.writeText(addr).then(() => true).catch(() => false)
+                : Promise.resolve(false);
+
+            tryClipboard.finally(() => showToast("Email copied to clipboard"));
+        }, { once: false });
+    })();
+
+    (function () {
+        const root = document.documentElement;
+        const btn = document.getElementById("themeToggle");
+        const sun = document.querySelector(".sun");
+        const moon = document.querySelector(".moon");
+
+        const currentTheme = () => {
+            const t = root.getAttribute("data-theme");
+            if (t === "auto") {
+                return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            return t;
+        };
+
+        const reflectIcons = (mode) => {
+            sun.classList.toggle("active", mode === "light");
+            moon.classList.toggle("active", mode === "dark");
+        };
+
+        const applyTheme = (t) => {
+            root.setAttribute("data-theme", t);
+            localStorage.setItem("theme", t);
+            btn.setAttribute("aria-pressed", t === "dark");
+            reflectIcons(t);
+        };
+
+        const initial = currentTheme();
+        btn.setAttribute("aria-pressed", initial === "dark");
+        reflectIcons(initial);
+
+        btn.addEventListener("click", () => {
+            const next = currentTheme() === "dark" ? "light" : "dark";
+            applyTheme(next);
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+</script>
+</body>
+</html>
