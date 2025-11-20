@@ -310,7 +310,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--border-light); margin-top:
 }
 
 .project-visual {
-    height: 220px; 
+    height: 275px; 
     background: var(--bg-surface);
     border-radius: 12px;
     overflow: hidden;
