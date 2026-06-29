@@ -3,262 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Jebens | Software Engineer</title>
+    <title>Mark Jebens — Full-Stack Software Engineer</title>
+    <meta name="description" content="Mark Jebens is a full-stack software engineer in Cape Town, building scalable web systems with React, Next.js, Node and C#/.NET — with a designer's eye for detail.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@500;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <canvas id="ambient-canvas"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="ambient" aria-hidden="true"></div>
 
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <a href="#hero" class="logo">Mark Jebens<span class="period">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact" class="btn-nav">Get in touch</a></li>
-            </ul>
-            <div class="mobile-menu-toggle">
-                <div class="line"></div><div class="line"></div>
-            </div>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="nav" id="top">
+        <div class="container nav-inner">
+            <a href="#top" class="brand">
+                <span class="brand-mark">MJ</span>
+                <span class="brand-name">Mark Jebens</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#work">Work</a>
+                <a href="#contact" class="nav-cta">Get in touch</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <section id="hero">
-        <div class="container hero-content">
-            <h1 class="hero-title reveal-text">
-                Engineering complex<br>
-                <span class="highlight">systems</span> with precision.
-            </h1>
-            <p class="hero-sub reveal-text delay-1">
-                Full-Stack Software Engineer specialising in building scalable web applications with React, Next.js, Node.js, and C# .NET. Experienced in financial modelling and project management, with a focus on delivering robust, efficient solutions.
-            </p>
-            <div class="hero-actions reveal-text delay-2">
-                <a href="#experience" class="btn-primary">View Experience</a>
-                <a href="#contact" class="btn-secondary">Contact Me</a>
-            </div>
-        </div>
-        
-        <div class="scroll-cue">
-            <div class="mouse-icon">
-                <div class="wheel"></div>
-            </div>
-            <span>Scroll</span>
-        </div>
-    </section>
+    <main id="main">
 
-    <section id="about" class="section-spacing">
-        <div class="container">
-            <div class="split-layout">
-                <div class="section-label reveal-up">01 / About</div>
-                <div class="content-block reveal-up">
-                    <h2 class="heading-lg">Technical depth meets<br>creative vision.</h2>
-                    <p class="text-body">
-                        I am a Full-Stack Engineer currently based in Cape Town, South Africa. My career has evolved from high-level graphic design to complex IT engineering and software development.
-                    </p>
-                    <p class="text-body">
-                        With a strong foundation in C#, PHP, and modern JavaScript ecosystems, I specialize in building robust infrastructures and user-centric applications. I also bring significant experience in Azure DevOps and financial modeling.
-                    </p>
-                    
-                    <div class="tech-stack-minimal">
-                        <span>TypeScript & React</span>
-                        <span>Next.js</span>
-                        <span>Tailwind CSS</span>
-                        <span>C# / ASP.NET</span>
-                        <span>Azure & DevOps</span>
-                        <span>PHP / Laravel</span>
-                        <span>SQL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section-spacing bg-subtle">
-        <div class="container">
-            <div class="split-layout">
-                <div class="section-label reveal-up">02 / Experience</div>
-                <div class="experience-list reveal-up">
-                    
-                    <div class="job-row">
-                        <div class="job-date">Nov 2024 — Present</div>
-                        <div class="job-detail">
-                            <h4>Software Engineer</h4>
-                            <span class="company">Precise Digital • Auckland, NZ (Remote)</span>
-                            <p>Full-stack development focusing on scalable web architectures, API integration, and DevOps pipelines.</p>
-                            <div class="job-tags">
-                                <span>React.js</span><span>Node.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="job-row">
-                        <div class="job-date">Nov 2022 — Oct 2024</div>
-                        <div class="job-detail">
-                            <h4>IT Engineer & Project Manager</h4>
-                            <span class="company">Phelan Green Energy • Cape Town</span>
-                            <p>Managed Azure cloud infrastructure, led agile projects, and developed financial models. Handled network security, asset management, and SharePoint administration.</p>
-                            <div class="job-tags">
-                                <span>Microsoft Azure</span><span>Financial Modeling</span><span>SharePoint</span><span>Agile</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="job-row">
-                        <div class="job-date">Aug 2021 — Nov 2022</div>
-                        <div class="job-detail">
-                            <h4>Software Engineer</h4>
-                            <span class="company">Bermont Digital • South Africa</span>
-                            <p>Developed and implemented ASP.NET Web Forms solutions and PHP Laravel applications. Transitioned from contract C# Developer to Full-time Engineer.</p>
-                            <div class="job-tags">
-                                <span>C# .NET</span><span>PHP Laravel</span><span>Tailwind CSS</span><span>Git</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="job-row">
-                        <div class="job-date">2018 — 2023</div>
-                        <div class="job-detail">
-                            <h4>Graphic Designer & Social Manager</h4>
-                            <span class="company">White Rabbit Gaming & Goliath Gaming</span>
-                            <p>Lead creative direction and social media management for major esports organizations.</p>
-                            <div class="job-tags">
-                                <span>Graphic Design</span><span>Brand Strategy</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="section-spacing">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-label">03 / Latest Work</span>
-            </div>
-
-            <div class="project-list">
-                
-                <div class="project-item reveal-up">
-                    <div class="project-info">
-                        <h3 class="project-title">Client Dashboard</h3>
-                        <p class="project-desc">A high-performance analytics dashboard for Precise Digital clients to view real-time anlytical and products data.</p>
-                        <div class="tags">
-                            <span>React</span><span>Next.js</span><span>Tailwind</span><span>PostgreSQL</span>
-                        </div>
-                        <span class="btn-link disabled">Private Software</span>
-                    </div>
-                    <div class="project-visual">
-                        <img src="clientdash.jpg" alt="Client Dashboard Screenshot" class="project-image">
-                    </div>
-                </div>
-
-                <div class="project-item reveal-up">
-                    <div class="project-info">
-                        <h3 class="project-title">Admin Dashboard</h3>
-                        <p class="project-desc">Internal management tool for Precise Digital allowing granular control over users and reporting and statements.</p>
-                        <div class="tags">
-                            <span>Javascript</span><span>SQL</span><span>Bootstrap 5</span>
-                        </div>
-                        <span class="btn-link disabled">Private Software</span>
-                    </div>
-                    <div class="project-visual">
-                        <img src="admindash.jpg" alt="Admin Dashboard Screenshot" class="project-image">
-                    </div>
-                </div>
-
-                <div class="project-item reveal-up">
-                    <div class="project-info">
-                        <h3 class="project-title">Digital EPC System</h3>
-                        <p class="project-desc">Engineering procurement construction system to track renewable assets.</p>
-                        <div class="tags">
-                            <span>React</span><span>Next.js</span><span>Tailwind</span><span>PostgreSQL</span>
-                        </div>
-                        <span class="btn-link disabled">Private Software</span>
-                    </div>
-                    <div class="project-visual">
-                        <img src="digitalepc.jpg" alt="Digital EPC System Screenshot" class="project-image">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-spacing">
-        <div class="container small-container">
-            <div class="text-center reveal-up">
-                <h2 class="heading-lg">Let's discuss your<br>next project.</h2>
-                <p class="text-body" style="margin: 2rem auto;">
-                    Open to engineering opportunities and new projects.
+        <section id="hero" class="hero">
+            <div class="container hero-inner">
+                <p class="eyebrow reveal" data-reveal>
+                    <span class="status-dot"></span>
+                    Full-stack software engineer — Cape Town, ZA · GMT+2
                 </p>
-                <a id="email-link" class="email-link"></a>
-                
-                <div class="social-row">
-                    <a href="https://www.linkedin.com/in/mark-jebens" target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                    </a>
-                    <a href="https://github.com/markjebens" target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>
+                <h1 class="hero-title">
+                    <span class="line-mask"><span class="reveal" data-reveal>I build scalable web</span></span>
+                    <span class="line-mask"><span class="reveal" data-reveal data-delay="1">systems with the care</span></span>
+                    <span class="line-mask"><span class="reveal" data-reveal data-delay="2">of a <em>designer.</em></span></span>
+                </h1>
+                <p class="hero-sub reveal" data-reveal data-delay="3">
+                    Currently at Precise Digital, working across React, Next.js, Node and C#/.NET —
+                    from financial models to production infrastructure. I came to engineering through
+                    years of design, and it still shows in the details.
+                </p>
+                <div class="hero-actions reveal" data-reveal data-delay="4">
+                    <a href="#work" class="btn btn-primary">View selected work</a>
+                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-inner">
-                <span>&copy; <span id="current-year"></span> Mark Jebens</span>
-                <span>Portfolio</span>
+            <a href="#about" class="scroll-cue" aria-label="Scroll to content">
+                <span class="scroll-label">Scroll</span>
+                <span class="scroll-track"><span class="scroll-thumb"></span></span>
+            </a>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <p class="section-label reveal" data-reveal>01 — About</p>
+                <div class="about-grid">
+                    <div class="about-portrait reveal" data-reveal>
+                        <img src="pfp.jpg" alt="Portrait of Mark Jebens" loading="lazy">
+                        <span class="portrait-tag">Cape Town · 2026</span>
+                    </div>
+                    <div class="about-body reveal" data-reveal data-delay="1">
+                        <h2 class="heading">Technical depth, shaped by a design background.</h2>
+                        <p class="lead">
+                            I'm a full-stack engineer based in Cape Town, South Africa. My path ran
+                            from high-level graphic design for esports brands into IT engineering and,
+                            now, software development — so I think about systems and interfaces in the
+                            same breath.
+                        </p>
+                        <p class="muted">
+                            I work comfortably across the stack: C#/.NET and PHP on the back end, modern
+                            TypeScript and React on the front, with real experience in Azure DevOps and
+                            financial modelling. I like building robust infrastructure that stays
+                            pleasant to use.
+                        </p>
+                        <ul class="stack">
+                            <li>TypeScript &amp; React</li>
+                            <li>Next.js</li>
+                            <li>Node.js</li>
+                            <li>C# / ASP.NET</li>
+                            <li>PHP / Laravel</li>
+                            <li>Azure &amp; DevOps</li>
+                            <li>PostgreSQL / SQL</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <p class="section-label reveal" data-reveal>02 — Experience</p>
+                <ol class="timeline">
+                    <li class="job reveal" data-reveal>
+                        <div class="job-meta">
+                            <span class="job-date">Nov 2024 — Present</span>
+                            <span class="job-status">Current</span>
+                        </div>
+                        <div class="job-body">
+                            <h3>Software Engineer</h3>
+                            <p class="job-org">Precise Digital — Auckland, NZ (Remote)</p>
+                            <p class="muted">Full-stack development focused on scalable web architecture, API integration and DevOps pipelines.</p>
+                            <ul class="tags">
+                                <li>React</li><li>Node.js</li><li>TypeScript</li><li>Tailwind</li><li>PostgreSQL</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job reveal" data-reveal>
+                        <div class="job-meta">
+                            <span class="job-date">Nov 2022 — Oct 2024</span>
+                        </div>
+                        <div class="job-body">
+                            <h3>IT Engineer &amp; Project Manager</h3>
+                            <p class="job-org">Phelan Green Energy — Cape Town</p>
+                            <p class="muted">Managed Azure cloud infrastructure, led agile projects and built financial models. Owned network security, asset management and SharePoint administration.</p>
+                            <ul class="tags">
+                                <li>Microsoft Azure</li><li>Financial Modelling</li><li>SharePoint</li><li>Agile</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job reveal" data-reveal>
+                        <div class="job-meta">
+                            <span class="job-date">Aug 2021 — Nov 2022</span>
+                        </div>
+                        <div class="job-body">
+                            <h3>Software Engineer</h3>
+                            <p class="job-org">Bermont Digital — South Africa</p>
+                            <p class="muted">Built ASP.NET Web Forms and PHP/Laravel applications. Moved from contract C# developer to full-time engineer.</p>
+                            <ul class="tags">
+                                <li>C# / .NET</li><li>PHP / Laravel</li><li>Tailwind</li><li>Git</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job reveal" data-reveal>
+                        <div class="job-meta">
+                            <span class="job-date">2018 — 2023</span>
+                        </div>
+                        <div class="job-body">
+                            <h3>Graphic Designer &amp; Social Manager</h3>
+                            <p class="job-org">White Rabbit Gaming &amp; Goliath Gaming</p>
+                            <p class="muted">Led creative direction and social media for major esports organisations — the design foundation everything else is built on.</p>
+                            <ul class="tags">
+                                <li>Graphic Design</li><li>Brand Strategy</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="work" class="section">
+            <div class="container">
+                <p class="section-label reveal" data-reveal>03 — Selected work</p>
+
+                <div class="project reveal" data-reveal>
+                    <div class="project-text">
+                        <span class="project-index">01</span>
+                        <h3 class="project-title">Client Dashboard</h3>
+                        <p class="muted">A high-performance analytics dashboard for Precise Digital clients — real-time product and performance data, built to stay fast under load.</p>
+                        <ul class="tags">
+                            <li>React</li><li>Next.js</li><li>Tailwind</li><li>PostgreSQL</li>
+                        </ul>
+                        <span class="project-flag">Private software</span>
+                    </div>
+                    <div class="project-shot">
+                        <img src="clientdash.jpg" alt="Client Dashboard interface" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="project reveal" data-reveal>
+                    <div class="project-text">
+                        <span class="project-index">02</span>
+                        <h3 class="project-title">Admin Dashboard</h3>
+                        <p class="muted">Internal management tool for Precise Digital — granular control over users, reporting and statements for the operations team.</p>
+                        <ul class="tags">
+                            <li>JavaScript</li><li>SQL</li><li>Bootstrap 5</li>
+                        </ul>
+                        <span class="project-flag">Private software</span>
+                    </div>
+                    <div class="project-shot">
+                        <img src="admindash.jpg" alt="Admin Dashboard interface" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="project reveal" data-reveal>
+                    <div class="project-text">
+                        <span class="project-index">03</span>
+                        <h3 class="project-title">Digital EPC System</h3>
+                        <p class="muted">An engineering, procurement and construction platform for tracking renewable-energy assets end to end.</p>
+                        <ul class="tags">
+                            <li>React</li><li>Next.js</li><li>Tailwind</li><li>PostgreSQL</li>
+                        </ul>
+                        <span class="project-flag">Private software</span>
+                    </div>
+                    <div class="project-shot">
+                        <img src="digitalepc.jpg" alt="Digital EPC System interface" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <p class="section-label reveal" data-reveal>04 — Contact</p>
+                <div class="contact-inner reveal" data-reveal data-delay="1">
+                    <h2 class="heading contact-heading">Let's build your next system.</h2>
+                    <p class="lead contact-lead">Open to engineering roles and select freelance projects. The fastest way to reach me is email.</p>
+                    <a id="email-link" class="email-link"></a>
+                    <div class="social-row">
+                        <a href="https://www.linkedin.com/in/mark-jebens" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/markjebens" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>© <span id="current-year"></span> Mark Jebens</span>
+            <span class="footer-note">Built in Cape Town · <a href="#top">Back to top ↑</a></span>
         </div>
     </footer>
 
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Get in touch</a>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+        <a href="#about">01 — About</a>
+        <a href="#experience">02 — Experience</a>
+        <a href="#work">03 — Work</a>
+        <a href="#contact">04 — Get in touch</a>
     </nav>
 
     <script src="script.js"></script>
-    <script>
-        const user = "markjebens";
-        const domain = "gmail.com";
-        const link = document.getElementById("email-link");
-        link.href = `mailto:${user}@${domain}`;
-        link.textContent = `${user}@${domain}`;
-
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileNav = document.querySelector('.mobile-nav');
-        
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
