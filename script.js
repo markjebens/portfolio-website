@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ---- Email (light obfuscation) ---- */
-    const user = 'markjebens';
-    const domain = 'gmail.com';
+    const user = 'hello';
+    const domain = 'markjebens.com';
     const email = document.getElementById('email-link');
     if (email) {
         email.href = `mailto:${user}@${domain}`;
